@@ -1,12 +1,12 @@
-import java.util.Objects;
-
-public class Product {
+public class Product { //принцип единственной ответственности (класс отвечает только за продукты)
     protected String name;
     protected double price;
+    protected boolean isAvailability;
 
-    public Product(String name, double price) {
+    public Product(String name, double price, boolean isAvailability) {
         this.name = name;
         this.price = price;
+        this.isAvailability = isAvailability;
     }
 
     public void setPrice(double price) {
@@ -21,16 +21,7 @@ public class Product {
         return price;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Product product = (Product) o;
-        return Double.compare(product.price, price) == 0 && Objects.equals(name, product.name);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(name, price);
+    public boolean isAvailability() {
+        return isAvailability;
     }
 }

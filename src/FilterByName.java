@@ -11,11 +11,10 @@ public class FilterByName implements Filter {
         System.out.println("Фильтрация по названию продукта: ");
         String nameProduct = scanner.nextLine();
         List<Product> filterOrder = new ArrayList<>();
-        for (Product o : order){
-                if(o.getName().equals(nameProduct)){
-                    filterOrder.add(o);
-                }
-
+        for (Product o : order) {
+            if (o.getName().equals(nameProduct)) {
+                filterOrder.add(o);
+            }
         }
         for (Product p : filterOrder) {
             System.out.println(numberOrder++ + ". " + filterOrder);
